@@ -1,0 +1,1 @@
+'use client';import {useMemo} from 'react';import {translator,type Locale} from './i18n';export function useTranslator(locale:Locale){return useMemo(()=>translator(locale),[locale]);}

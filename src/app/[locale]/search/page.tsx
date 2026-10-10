@@ -1,0 +1,1 @@
+import {redirect} from 'next/navigation';export default async function Search({params,searchParams}:{params:Promise<{locale:string}>;searchParams:Promise<{q?:string}>}){const {locale}=await params;const {q}=await searchParams;redirect('/'+locale+'/products?q='+encodeURIComponent((q??'').slice(0,120)));}

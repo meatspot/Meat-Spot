@@ -1,0 +1,1 @@
+export default function Loading(){return <div className="panel" role="status" aria-label="MEAT SPOT"><div className="skeleton"/><div className="skeleton"/><div className="skeleton"/></div>;}

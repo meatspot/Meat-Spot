@@ -1,0 +1,1 @@
+import {NextRequest,NextResponse} from 'next/server';import {requireAdmin} from '@/lib/auth';import {sameOrigin,apiError} from '@/lib/http';import {processNotifications} from '@/lib/notifications';export async function POST(request:NextRequest){try{sameOrigin(request);await requireAdmin();return NextResponse.json(await processNotifications());}catch(e){return apiError(e);}}

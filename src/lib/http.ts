@@ -1,0 +1,7 @@
+import {NextRequest,NextResponse} from 'next/server';
+import {ZodError} from 'zod';
+import {HttpError} from './auth';import {limitedBytes} from './upload';
+export function sameOrigin(request:NextRequest){const origin=request.headers.get('origin');const expected=process.env.APP_URL?new URL(process.env.APP_URL).origin:request.nextUrl.origin;if(!origin||origin!==expected)throw new HttpError(403,'INVALID_ORIGIN');}
+export async function jsonBody(request:NextRequest){if(!request.headers.get('content-type')?.includes('application/json'))throw new HttpError(415,'JSON_REQUIRED');if(Number(request.headers.get('content-length')??0)>65536)throw new HttpError(413,'TOO_LARGE');const text=new TextDecoder().decode(await limitedBytes(request,65536));try{return JSON.parse(text);}catch{throw new HttpError(400,'INVALID_JSON');}}
+export function apiError(error:unknown){if(error instanceof HttpError)return NextResponse.json({error:error.code},{status:error.status,headers:{'Cache-Control':'no-store'}});if(error instanceof ZodError)return NextResponse.json({error:'INVALID_INPUT'},{status:400});if(error instanceof Error&&/NOT_CONFIGURED/.test(error.message))return NextResponse.json({error:'NOT_CONFIGURED'},{status:503});return NextResponse.json({error:'REQUEST_FAILED'},{status:500});}
+export function safeNext(value:string|null,locale:string){const fallback='/'+locale+'/account';return value?.startsWith('/'+locale+'/')&&!value.includes('\\')&&!value.includes('//')?value:fallback;}

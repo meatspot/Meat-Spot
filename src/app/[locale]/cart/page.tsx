@@ -1,0 +1,1 @@
+import {Cart} from '@/components/cart';import {validLocale} from '@/lib/i18n';import {notFound} from 'next/navigation';export const metadata={robots:{index:false,follow:false}};export default async function Page({params}:{params:Promise<{locale:string}>}){const {locale}=await params;if(!validLocale(locale))notFound();return <Cart locale={locale}/>;}
