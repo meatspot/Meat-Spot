@@ -1,44 +1,22 @@
-# الربط والنشر
-لم يُنفّذ نشر أو تغيير DNS أو تعديل مشاريع سحابية حتى الآن. الأدوات المتصلة تعرض حساب GitHub AAKWHX وSupabase blue-sass، وليسا هدف MEAT SPOT المؤكد. تسجيل الدخول في صفحات المتصفح لا يبدّل حسابات الموصلات تلقائياً.
+# متابعة الربط والنشر
+اقرأ CLOUD-STATE-ar.md للحالة الفعلية. المستودع ومشروع Supabase ومشروع Vercel أُنشئت روابطها الأساسية، ولا تستخدم الحسابات والمشاريع القديمة.
 
-## ترتيب التنفيذ
-1. تأكيد مستودع GitHub ومشروع Supabase وفريق Vercel ومشروع Google Cloud الصحيح. إعادة توصيل الأدوات بالحساب الذي يملكها أو إصلاح التحكم بالمتصفح. لا تستخدم blue-sass ولا تنشئ مشروعاً في فريق غير مؤكد.
-2. رفع هذا المجلد كجذر مستودع الموقع، أو تحديد website كـ Root Directory إذا كان داخل مستودع أكبر. تأكد أن .env.local وnode_modules و.next لا تدخل Git.
-3. ربط Supabase CLI بالمرجع الصحيح ثم تطبيق migrations الثلاث. قراءة المخطط الحالي أولاً إذا المشروع ليس فارغاً؛ لا تنفذ reset على قاعدة حقيقية.
-4. إضافة مفاتيح الخادم والواجهة وفق الجدول أدناه. تشغيل سكربت المسودات مرة واحدة بعد ضبط MEAT_SPOT_PROJECT_REF والتحقق من هوية المشروع. السكربت يمنع مرجع blue-sass القديم.
-5. إعداد Google OAuth في Google Cloud ووضع client ID وclient secret في مزوّد Google داخل Supabase Auth. رابط الرجوع إلى Google يكون https://PROJECT_REF.supabase.co/auth/v1/callback. إعداد Supabase Site URL وRedirect URLs لعناوين الموقع /auth/callback؛ تستخدم الشيفرة callback واحداً.
-6. ربط المستودع بـ Vercel وضبط المتغيرات للإنتاج والمعاينة كلٌ بقيمه. التحقق من Google login وحساب الإدارة ثم المنتجات والأسعار القانونية ومواعيد الاستلام والطلبات ورسائل البريد على المعاينة.
-7. إضافة meat-spot.nl وwww.meat-spot.nl للمشروع الصحيح. استخدم سجلات DNS التي يعرضها Vercel لهذا المشروع في TransIP؛ حافظ على MX وTXT للبريد. بعد نجاح SSL والتحقق من الدومين، اضبط APP_URL=https://meat-spot.nl وأعد النشر.
-8. فحص النشر الفعلي على الهاتف والكمبيوتر، محاولة وصول غير مصرح للإدارة، طلب تجريبي متفق عليه، رسالة البريد، sitemap وrobots والروابط والصور.
+## المتبقي
+1. إكمال DNS في TransIP بالقيم الخاصة بالمشروع في CLOUD-STATE-ar.md ثم التحقق من SSL ومن عرض الدومين.
+2. منح اتصال Vercel صلاحية الفريق والمشروع لقراءة السجلات وفحص النشر المحمي. تحقق من Git connection في Project Settings → Git ليصبح push تلقائياً.
+3. إضافة SUPABASE_SECRET_KEY كـ Secret إلى الخادم من مشروع Supabase الصحيح. الإضافة الحالية تكشف مفاتيح الواجهة العامة فقط؛ أداة المتصفح متوقفة. لا يُنشر المفتاح في Git أو NEXT_PUBLIC.
+4. إعداد Google provider في Supabase بالمفاتيح من مشروع Google Cloud المعتمد، دون إرسالها في المحادثة. رابط Google callback: https://rnkxuknblzsbnauwjdds.supabase.co/auth/v1/callback. اضبط Supabase Site URL=https://meat-spot.nl وعنوان redirect https://meat-spot.nl/auth/callback، وعناوين معاينة معتمدة إن احتجت اختبارها.
+5. إعداد Resend ودومين إرسال متحقق، ثم RESEND_API_KEY وEMAIL_FROM كأسرار/إعدادات خادم. CRON_SECRET أُعدّ بالفعل، لكن جدولة الإعادة لم تُفعّل.
+6. مراجعة صور وأسماء ووحدات وكميات وأسعار المنتجات، ونشر الأقسام أولاً. المسودات لا تتضمن أسعاراً مفترضة.
+7. إدخال النصوص القانونية بأربع لغات واعتماد ساعات ومواعيد الاستلام والسعة ووقت التجهيز. لا تمكّن الطلبات قبل اختبار الدخول والبريد ودورة الطلب.
+8. تأكيد الرمز البريدي وإحداثيات المحل وGoogle Place ID قبل إضافتها من لوحة الإدارة.
+9. تقييد Maps Embed key بنطاق الموقع وبـ Maps Embed API فقط. تحقق من Search Console ثم أرسل sitemap.xml؛ تحقق من Google Business Profile الصحيح وأضف الرابط والصور الحقيقية.
 
-## المفاتيح
-| المتغير | مكان الاستخدام |
-|---|---|
-| NEXT_PUBLIC_SUPABASE_URL | عنوان المشروع الصحيح؛ معلومة عامة |
-| NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY | مفتاح واجهة عام؛ الأمان بواسطة RLS |
-| SUPABASE_SECRET_KEY | خادم فقط؛ لا بادئة NEXT_PUBLIC ولا Git |
-| OWNER_ADMIN_EMAIL | خادم/إعداد فقط؛ البريد المعتمد موجود في .env.local |
-| APP_URL | عنوان النشر الدقيق لفحص Origin والروابط |
-| RESEND_API_KEY | خادم فقط؛ يحتاج حساب Resend ودومين إرسال متحقق |
-| EMAIL_FROM | عنوان إرسال من الدومين المتحقق |
-| BUSINESS_NOTIFICATION_EMAIL | بريد استقبال المحل بعد تأكيد ملكيته |
-| CRON_SECRET | قيمة عشوائية قوية للخادم ومعالج outbox |
-| NEXT_PUBLIC_GOOGLE_MAPS_EMBED_KEY | مفتاح عام مقيد بـ Maps Embed API وHTTP referrers للموقع |
-| GOOGLE_SITE_VERIFICATION | رمز تحقق Search Console؛ ليس سراً |
-| MEAT_SPOT_PROJECT_REF | تحقق هوية لسكربت المسودات فقط |
+## متغيرات البيئة
+NEXT_PUBLIC_SUPABASE_URL وNEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY عامان وضُبطا. OWNER_ADMIN_EMAIL وBUSINESS_NOTIFICATION_EMAIL ضُبطا كمتغيرات خاصة. APP_URL للإنتاج meat-spot.nl وللمعاينة meat-spot-meatspot.vercel.app. CRON_SECRET سري ولا يُطبع.
+المتبقي SUPABASE_SECRET_KEY وRESEND_API_KEY وEMAIL_FROM وMaps Embed key ورمز Search Console بحسب الخدمة.
+لا تُرسل مفاتيح في المحادثة، ولا تضعها في ملفات الواجهة أو سجلات البناء.
 
-لا تُرسل الأسرار في المحادثة. ضعها مباشرة في البيئة الخاصة أو إعدادات الخدمة. تجنب تضمين قيمها في السجلات أو لقطات الشاشة.
-Google client secret يُحفظ في إعداد Google داخل Supabase ولا يحتاجه المتصفح.
-
-## Google Search وMaps
-الموقع يجهز sitemap وrobots وLocalBusiness. يجب تأكيد الرمز البريدي والإحداثيات وPlace ID الخاص بالمحل قبل إدخالهما من الإدارة.
-تحقق من ملكية الدومين في Search Console ثم أرسل sitemap.xml واطلب الفهرسة.
-Google Business Profile يحتاج ملف المحل الصحيح والتحقق الذي تحدده Google؛ لا تعدل ملف نشاط سابق في العنوان نفسه. أضف الصور الحقيقية وساعات العمل والمنتجات والرابط بعد التحقق.
-إدراج بيانات منظمة أو نشر الموقع لا يضمن موعد الظهور في Google ولا ترتيب البحث.
-
-## تشغيل المسودات
-بعد تطبيق المخطط وإضافة البيئة الخاصة الصحيحة:
-```powershell
-node --env-file=.env.local --import tsx scripts/seed-drafts.ts
-```
-المسودات غير متاحة للبيع. راجع أنواع المنتجات ووحداتها وكمياتها وصورها وأسعارها قبل النشر.
+## التحقق النهائي
+العميل يدخل Google ويضيف منتجات حقيقية مسعرة ويحجز موعداً، يرى طلباته وحدها، وتتلقى الإدارة الإشعار وتغيّر الحالة. إعادة الإرسال لا تكرر الطلب، والإلغاء يعيد السعة مرة واحدة. اختبر عرض الهاتف والكمبيوتر واللغات الأربع والروابط والصور والدومين وشهادة SSL.
+فهرسة Google وظهور Maps يحتاجان إجراءات التحقق لدى Google؛ لا ضمان للموعد أو الترتيب.
