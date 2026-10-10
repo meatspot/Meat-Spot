@@ -1,0 +1,2 @@
+import 'server-only';import {cache} from 'react';import {configured} from './supabase/server';
+export const googleReady=cache(async()=>{if(!configured())return false;try{const response=await fetch(process.env.NEXT_PUBLIC_SUPABASE_URL+'/auth/v1/settings',{headers:{apikey:process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!},next:{revalidate:60},signal:AbortSignal.timeout(5000)});if(!response.ok)return false;const data=await response.json();return data.external?.google===true;}catch{return false;}});

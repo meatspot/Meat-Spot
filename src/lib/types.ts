@@ -1,7 +1,7 @@
 import type { Locale } from './i18n';
 export type Unit='kg'|'g'|'piece'|'package';
 export type Translation={name:string;description:string;preparation?:string};
-export type Product={id:string;slug:string;category_id:string;status:'draft'|'published'|'archived';available:boolean;unit_type:Unit;price_minor:number|null;min_quantity_base:number;step_quantity_base:number;offer_price_minor:number|null;offer_until:string|null;translations:Partial<Record<Locale,Translation>>;images:string[]};
+export type Product={id:string;slug:string;category_id:string;status:'draft'|'showcase'|'published'|'archived';available:boolean;unit_type:Unit;price_minor:number|null;min_quantity_base:number;step_quantity_base:number;offer_price_minor:number|null;offer_until:string|null;translations:Partial<Record<Locale,Translation>>;images:string[]};
 export type Category={id:string;slug:string;parent_id:string|null;published:boolean;sort_order:number;translations:Partial<Record<Locale,Translation>>};
 export type CartLine={productId:string;quantity:number};
 export type QuoteLine=CartLine&{name:string;unit:Unit;unitPrice:number;lineTotal:number;image:string|null};

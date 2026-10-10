@@ -1101,5 +1101,6 @@ export const messages: Record<string, readonly string[]> = {
     "İndirim"
   ]
 };
+messages.showcase = ["Alleen tonen","عرض التشكيلة فقط","Display only","Yalnızca göster"];
 export function translator(locale:Locale){const index=locales.indexOf(locale);return (key:string)=>messages[key]?.[index]??key;}
 export function money(cents:number,locale:Locale){return new Intl.NumberFormat(locale==='ar'?'ar-NL':locale,{style:'currency',currency:'EUR'}).format(cents/100);}
