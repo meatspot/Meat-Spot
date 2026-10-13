@@ -1,10 +1,10 @@
 import type { Locale } from './i18n';
 export type Unit='kg'|'g'|'piece'|'package';
 export type Translation={name:string;description:string;preparation?:string};
-export type Product={id:string;slug:string;category_id:string;status:'draft'|'showcase'|'published'|'archived';available:boolean;unit_type:Unit;price_minor:number|null;min_quantity_base:number;step_quantity_base:number;offer_price_minor:number|null;offer_until:string|null;translations:Partial<Record<Locale,Translation>>;images:string[]};
+export type Product={id:string;slug:string;category_id:string;status:'draft'|'showcase'|'published'|'archived';available:boolean;unit_type:Unit;price_minor:number|null;min_quantity_base:number;step_quantity_base:number;offer_price_minor:number|null;offer_until:string|null;translations:Partial<Record<Locale,Translation>>;images:string[];request_enabled?:boolean;request_units?:('kg'|'piece')[]};
 export type Category={id:string;slug:string;parent_id:string|null;published:boolean;sort_order:number;translations:Partial<Record<Locale,Translation>>};
-export type CartLine={productId:string;quantity:number};
-export type QuoteLine=CartLine&{name:string;unit:Unit;unitPrice:number;lineTotal:number;image:string|null};
+export type CartLine={productId:string;quantity:number;unit?:'kg'|'piece'};
+export type QuoteLine=Omit<CartLine,'unit'>&{name:string;unit:Unit;unitPrice:number;lineTotal:number;image:string|null};
 export type Quote={lines:QuoteLine[];total:number;fingerprint:string};
 export type Slot={id:string;starts_at:string;ends_at:string;capacity:number;reserved_count:number};
 export type Order={id:string;order_number:number;customer_id:string;locale:Locale;status:OrderStatus;slot_id:string;estimated_total_minor:number;final_total_minor:number|null;contact_phone:string;created_at:string;pickup_slots?:Slot;order_items?:OrderItem[]};

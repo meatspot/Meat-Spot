@@ -1,0 +1,581 @@
+{
+  "status": "draft",
+  "availability": "Awaiting owner confirmation",
+  "records": [
+    {
+      "slug": "kippendijen",
+      "category": "kip",
+      "image": "chicken-thighs-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Kippendijen",
+          "description": "Bovenste deel van de kippenpoot; met bot en vel of als dijfilet."
+        },
+        "ar": {
+          "name": "أفخاذ الدجاج",
+          "description": "الجزء العلوي من رجل الدجاج؛ بالعظم والجلد أو فيليه."
+        },
+        "en": {
+          "name": "Chicken thighs",
+          "description": "Upper chicken leg; bone-in and skin-on or as thigh fillet."
+        },
+        "tr": {
+          "name": "Tavuk üst but",
+          "description": "Tavuğun üst bacağı; kemikli ve derili veya but fileto."
+        }
+      }
+    },
+    {
+      "slug": "drumsticks",
+      "category": "kip",
+      "image": "chicken-drumsticks-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Drumsticks",
+          "description": "Onderste vleesdeel van de kippenpoot, meestal met bot en vel."
+        },
+        "ar": {
+          "name": "ساق الدجاج",
+          "description": "الجزء السفلي من رجل الدجاج، غالباً بالعظم والجلد."
+        },
+        "en": {
+          "name": "Chicken drumsticks",
+          "description": "Lower chicken leg, usually bone-in and skin-on."
+        },
+        "tr": {
+          "name": "Tavuk baget",
+          "description": "Tavuğun alt bacağı; genellikle kemikli ve derili."
+        }
+      }
+    },
+    {
+      "slug": "ribeye",
+      "category": "rundvlees",
+      "image": "ribeye-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Ribeye",
+          "description": "Steak uit de rib, met natuurlijke vetnaden. Geschikt om te bakken of te grillen."
+        },
+        "ar": {
+          "name": "ريب آي",
+          "description": "ستيك من الأضلاع مع خطوط دهن طبيعية، مناسب للشواء أو المقلاة."
+        },
+        "en": {
+          "name": "Ribeye",
+          "description": "Rib steak with natural fat seams, suited to pan cooking or grilling."
+        },
+        "tr": {
+          "name": "Antrikot",
+          "description": "Kaburgadan steak, doğal yağ çizgileri; tava veya ızgara için."
+        }
+      }
+    },
+    {
+      "slug": "runderschenkel",
+      "category": "rundvlees",
+      "image": "beef-shank-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Runderschenkel",
+          "description": "Schenkel met mergbot en bindweefsel; geschikt voor langzaam garen."
+        },
+        "ar": {
+          "name": "ساق البقر بالعظم",
+          "description": "قطع ساق مع عظم النخاع وأنسجة ضامة، مناسبة للطهي البطيء."
+        },
+        "en": {
+          "name": "Beef shank",
+          "description": "Shank with marrow bone and connective tissue, suited to slow cooking."
+        },
+        "tr": {
+          "name": "Dana incik",
+          "description": "İlik kemiği ve bağ dokulu incik; yavaş pişirmeye uygun."
+        }
+      }
+    },
+    {
+      "slug": "rundergehakt",
+      "category": "rundvlees",
+      "image": "beef-mince-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Rundergehakt",
+          "description": "Gemalen rundvlees voor onder meer gehaktballen en vullingen. Vraag naar het vetgehalte."
+        },
+        "ar": {
+          "name": "لحم بقر مفروم",
+          "description": "لحم بقر مفروم للكفتة والحشوات؛ اسأل عن نسبة الدهن."
+        },
+        "en": {
+          "name": "Minced beef",
+          "description": "Ground beef for meatballs and fillings; ask about fat content."
+        },
+        "tr": {
+          "name": "Dana kıyma",
+          "description": "Köfte ve iç harç için dana kıyma; yağ oranını sorun."
+        }
+      }
+    },
+    {
+      "slug": "lamsbout",
+      "category": "lamsvlees",
+      "image": "lamb-leg-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Lamsbout",
+          "description": "Achterpoot van het lam; als braadstuk of in porties. Vraag naar de gewenste snit."
+        },
+        "ar": {
+          "name": "فخذ الغنم",
+          "description": "الرجل الخلفية للغنم، قطعة كبيرة أو مقطعة حسب الطبق."
+        },
+        "en": {
+          "name": "Lamb leg",
+          "description": "Lamb hind leg as a roast or portioned; ask for the cut you need."
+        },
+        "tr": {
+          "name": "Kuzu but",
+          "description": "Kuzunun arka bacağı; bütün veya porsiyonlanmış."
+        }
+      }
+    },
+    {
+      "slug": "lamsschenkel",
+      "category": "lamsvlees",
+      "image": "lamb-shank-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Lamsschenkel",
+          "description": "Onderste deel van de lamsbout; geschikt voor langzaam stoven."
+        },
+        "ar": {
+          "name": "ساق الغنم",
+          "description": "الجزء السفلي من رجل الغنم، مناسب للطهي البطيء."
+        },
+        "en": {
+          "name": "Lamb shank",
+          "description": "Lower lamb leg, suited to slow braising."
+        },
+        "tr": {
+          "name": "Kuzu incik",
+          "description": "Kuzunun alt bacağı; yavaş pişirmeye uygun."
+        }
+      }
+    },
+    {
+      "slug": "hamburgers",
+      "category": "rundvlees",
+      "image": "hamburgers-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Hamburgers",
+          "description": "Gevormde burgers. Vleessoort, kruiden en ingrediënten worden door de winkel bevestigd."
+        },
+        "ar": {
+          "name": "همبرغر",
+          "description": "أقراص برغر؛ يؤكد المحل نوع اللحم والبهارات والمكونات."
+        },
+        "en": {
+          "name": "Hamburgers",
+          "description": "Shaped patties; the shop confirms meat, seasoning and ingredients."
+        },
+        "tr": {
+          "name": "Hamburger köftesi",
+          "description": "Şekillendirilmiş köfteler; et, baharat ve içerikleri mağaza doğrular."
+        }
+      }
+    },
+    {
+      "slug": "kofta",
+      "category": "rundvlees",
+      "image": "kofta-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Kofta",
+          "description": "Gekruid gehakt in porties. Vraag naar de samenstelling en eventuele allergenen."
+        },
+        "ar": {
+          "name": "كفتة",
+          "description": "لحم مفروم متبل على شكل حصص؛ اسأل عن المكونات ومسببات الحساسية."
+        },
+        "en": {
+          "name": "Kofta",
+          "description": "Seasoned minced meat portions; ask about ingredients and allergens."
+        },
+        "tr": {
+          "name": "Köfte",
+          "description": "Baharatlı kıyma porsiyonları; içerik ve alerjenleri sorun."
+        }
+      }
+    },
+    {
+      "slug": "shawarma",
+      "category": "kip",
+      "image": "shawarma-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Shawarma",
+          "description": "Dunne gemarineerde vleesreepjes. Vleessoort en marinade worden per product bevestigd."
+        },
+        "ar": {
+          "name": "شاورما",
+          "description": "شرائح لحم رفيعة متبلة؛ يؤكد المحل نوع اللحم والتتبيلة لكل منتج."
+        },
+        "en": {
+          "name": "Shawarma",
+          "description": "Thin marinated meat strips; meat and marinade are confirmed per product."
+        },
+        "tr": {
+          "name": "Şavurma",
+          "description": "İnce marine et şeritleri; et ve marine içeriği ürün bazında doğrulanır."
+        }
+      }
+    },
+    {
+      "slug": "zalmfilet",
+      "category": "vis",
+      "image": "fish-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Zalmfilet",
+          "description": "Visfilet met een herkenbare roze kleur. Vraag naar herkomst, porties en beschikbaarheid."
+        },
+        "ar": {
+          "name": "فيليه سلمون",
+          "description": "فيليه سمك بلون وردي مميز؛ اسأل عن المصدر والحصص والتوفر."
+        },
+        "en": {
+          "name": "Salmon fillet",
+          "description": "Pink fish fillet; ask about origin, portions and availability."
+        },
+        "tr": {
+          "name": "Somon fileto",
+          "description": "Pembe balık fileto; köken, porsiyon ve stok bilgilerini sorun."
+        }
+      }
+    },
+    {
+      "slug": "kabeljauwfilet",
+      "category": "vis",
+      "image": "fish-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Kabeljauwfilet",
+          "description": "Witte visfilet. De exacte soort en beschikbaarheid worden door de winkel bevestigd."
+        },
+        "ar": {
+          "name": "فيليه القد",
+          "description": "فيليه سمك أبيض؛ يؤكد المحل النوع الدقيق والتوفر."
+        },
+        "en": {
+          "name": "Cod fillet",
+          "description": "White fish fillet; exact species and availability are confirmed by the shop."
+        },
+        "tr": {
+          "name": "Morina fileto",
+          "description": "Beyaz balık fileto; tür ve stok mağaza tarafından doğrulanır."
+        }
+      }
+    },
+    {
+      "slug": "paprikapoeder",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Paprikapoeder",
+          "description": "Milde peperkleur en smaak; bij vlees en marinades."
+        },
+        "ar": {
+          "name": "بابريكا",
+          "description": "لون ونكهة فلفل لطيفان للحوم والتتبيلات."
+        },
+        "en": {
+          "name": "Paprika",
+          "description": "Mild pepper flavour and colour for meat and marinades."
+        },
+        "tr": {
+          "name": "Toz paprika",
+          "description": "Et ve marinelerde hafif biber aroması ve renk."
+        }
+      }
+    },
+    {
+      "slug": "komijn",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Komijn",
+          "description": "Warm en aards; bij kofta, peulvruchten en marinades."
+        },
+        "ar": {
+          "name": "كمون",
+          "description": "نكهة دافئة وترابية للكفتة والبقول والتتبيلات."
+        },
+        "en": {
+          "name": "Cumin",
+          "description": "Warm and earthy, for kofta, pulses and marinades."
+        },
+        "tr": {
+          "name": "Kimyon",
+          "description": "Köfte, baklagil ve marine için sıcak, topraksı aroma."
+        }
+      }
+    },
+    {
+      "slug": "kurkuma",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Kurkuma",
+          "description": "Geel en aards; in rijstgerechten en kruidenmengsels."
+        },
+        "ar": {
+          "name": "كركم",
+          "description": "لون أصفر ونكهة ترابية للأرز وخلطات البهارات."
+        },
+        "en": {
+          "name": "Turmeric",
+          "description": "Yellow and earthy, for rice dishes and spice blends."
+        },
+        "tr": {
+          "name": "Zerdeçal",
+          "description": "Pilav ve baharat karışımlarında sarı renk ve topraksı aroma."
+        }
+      }
+    },
+    {
+      "slug": "zwarte-peper",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Zwarte peper",
+          "description": "Peperige smaak; heel of gemalen gebruiken."
+        },
+        "ar": {
+          "name": "فلفل أسود",
+          "description": "نكهة فلفل، يستخدم حباً أو مطحوناً."
+        },
+        "en": {
+          "name": "Black pepper",
+          "description": "Peppery flavour; use whole or ground."
+        },
+        "tr": {
+          "name": "Karabiber",
+          "description": "Biberli aroma; tane veya öğütülmüş kullanılır."
+        }
+      }
+    },
+    {
+      "slug": "koriander",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Koriander",
+          "description": "Citrusachtige zaadaroma; heel of gemalen."
+        },
+        "ar": {
+          "name": "كزبرة",
+          "description": "بذور بعطر قريب من الحمضيات، حباً أو مطحونة."
+        },
+        "en": {
+          "name": "Coriander",
+          "description": "Citrus-like seed aroma, whole or ground."
+        },
+        "tr": {
+          "name": "Kişniş",
+          "description": "Narenciyemsi tohum aroması; tane veya öğütülmüş."
+        }
+      }
+    },
+    {
+      "slug": "chilipoeder",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Chilipoeder",
+          "description": "Pittige smaak; scherpte verschilt per product."
+        },
+        "ar": {
+          "name": "شطة",
+          "description": "نكهة حارة؛ درجة الحرارة تختلف حسب المنتج."
+        },
+        "en": {
+          "name": "Chilli powder",
+          "description": "Hot flavour; heat varies by product."
+        },
+        "tr": {
+          "name": "Acı biber",
+          "description": "Acı aroma; acılık ürüne göre değişir."
+        }
+      }
+    },
+    {
+      "slug": "kerrie",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Kerrie",
+          "description": "Kruidenmengsel voor rijst en kip; samenstelling verschilt."
+        },
+        "ar": {
+          "name": "كاري",
+          "description": "خليط بهارات للأرز والدجاج؛ المكونات تختلف."
+        },
+        "en": {
+          "name": "Curry powder",
+          "description": "Spice blend for rice and chicken; ingredients vary."
+        },
+        "tr": {
+          "name": "Köri",
+          "description": "Pilav ve tavuk için karışım; içerik değişir."
+        }
+      }
+    },
+    {
+      "slug": "kaneel",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Kaneel",
+          "description": "Warm en zoet aroma; als stok of poeder."
+        },
+        "ar": {
+          "name": "قرفة",
+          "description": "عطر دافئ وحلو؛ عيدان أو مسحوق."
+        },
+        "en": {
+          "name": "Cinnamon",
+          "description": "Warm, sweet aroma, as sticks or powder."
+        },
+        "tr": {
+          "name": "Tarçın",
+          "description": "Sıcak ve tatlı aroma; çubuk veya toz."
+        }
+      }
+    },
+    {
+      "slug": "oregano",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Oregano",
+          "description": "Kruidig blad; bij tomaat, grillgerechten en marinades."
+        },
+        "ar": {
+          "name": "أوريغانو",
+          "description": "أوراق عطرية للطماطم والشواء والتتبيلات."
+        },
+        "en": {
+          "name": "Oregano",
+          "description": "Aromatic leaf for tomato, grilling and marinades."
+        },
+        "tr": {
+          "name": "Kekik",
+          "description": "Domates, ızgara ve marine için aromatik yaprak."
+        }
+      }
+    },
+    {
+      "slug": "tijm",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Tijm",
+          "description": "Aromatisch kruid voor vlees, soep en stoofgerechten."
+        },
+        "ar": {
+          "name": "زعتر",
+          "description": "عشبة عطرية للحوم والحساء والطواجن."
+        },
+        "en": {
+          "name": "Thyme",
+          "description": "Aromatic herb for meat, soup and stews."
+        },
+        "tr": {
+          "name": "Zahter",
+          "description": "Et, çorba ve yahni için aromatik ot."
+        }
+      }
+    },
+    {
+      "slug": "rozemarijn",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Rozemarijn",
+          "description": "Stevig kruid; een kleine hoeveelheid bij lam en aardappelen."
+        },
+        "ar": {
+          "name": "إكليل الجبل",
+          "description": "عشبة قوية؛ كمية صغيرة مع الغنم والبطاطا."
+        },
+        "en": {
+          "name": "Rosemary",
+          "description": "Robust herb, used sparingly with lamb and potatoes."
+        },
+        "tr": {
+          "name": "Biberiye",
+          "description": "Güçlü ot; kuzu ve patatesle az miktarda."
+        }
+      }
+    },
+    {
+      "slug": "laurier",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Laurier",
+          "description": "Blad voor soep en stoofgerechten; verwijder voor serveren."
+        },
+        "ar": {
+          "name": "ورق غار",
+          "description": "أوراق للحساء والطواجن، تزال قبل التقديم."
+        },
+        "en": {
+          "name": "Bay leaves",
+          "description": "Leaf for soups and stews; remove before serving."
+        },
+        "tr": {
+          "name": "Defne",
+          "description": "Çorba ve yahni için yaprak; servisten önce çıkarın."
+        }
+      }
+    },
+    {
+      "slug": "ras-el-hanout",
+      "category": "kruiden",
+      "image": "spices-assortment-v3.webp",
+      "translations": {
+        "nl": {
+          "name": "Ras el hanout",
+          "description": "Aromatisch kruidenmengsel; ingrediënten en allergenen navragen."
+        },
+        "ar": {
+          "name": "راس الحانوت",
+          "description": "خليط بهارات عطري؛ اسأل عن المكونات ومسببات الحساسية."
+        },
+        "en": {
+          "name": "Ras el hanout",
+          "description": "Aromatic blend; ask about ingredients and allergens."
+        },
+        "tr": {
+          "name": "Ras el hanout",
+          "description": "Aromatik karışım; içerik ve alerjenleri sorun."
+        }
+      }
+    }
+  ]
+}

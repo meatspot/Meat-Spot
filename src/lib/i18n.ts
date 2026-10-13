@@ -1,7 +1,7 @@
 export const locales = ['nl','ar','en','tr'] as const;
 export type Locale = typeof locales[number];
 export const validLocale = (s:string):s is Locale => (locales as readonly string[]).includes(s);
-export const messages: Record<string, readonly string[]> = {
+export const messages: Record<string, readonly string[]> = {"guide":["Vlees & kruiden","دليل الأنواع","Meat & spices","Et ve baharat"],
   "preview": [
     "Ontwerpvoorstel · geen echte bestellingen",
     "معاينة تصميم · لا توجد طلبات حقيقية",
@@ -1104,3 +1104,8 @@ export const messages: Record<string, readonly string[]> = {
 messages.showcase = ["Alleen tonen","عرض التشكيلة فقط","Display only","Yalnızca göster"];
 export function translator(locale:Locale){const index=locales.indexOf(locale);return (key:string)=>messages[key]?.[index]??key;}
 export function money(cents:number,locale:Locale){return new Intl.NumberFormat(locale==='ar'?'ar-NL':locale,{style:'currency',currency:'EUR'}).format(cents/100);}
+messages.requestEnabled=['Bestelaanvragen inschakelen','تفعيل طلبات التأكيد','Enable order requests','Sipariş taleplerini aç'];
+messages.requestUnits=['Besteleenheden','وحدات الطلب','Order units','Sipariş birimleri'];
+messages.priceCents=['Interne prijs (niet zichtbaar op de website)','السعر الداخلي (لا يظهر للعملاء)','Internal price (hidden from customers)','Dahili fiyat (müşterilere görünmez)'];
+messages.showcase=['Assortiment op aanvraag','تشكيلة للتأكيد من المحل','Selection on request','Talep üzerine ürünler'];
+
