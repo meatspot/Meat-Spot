@@ -68,6 +68,13 @@ test('Postgres migrations: RLS, admin identity, atomic orders and idempotency',a
   await save(ids.owner,{...document,requests_enabled:true});
   assert.equal((await db.query<{v:boolean}>('select requests_enabled as v from public.store_settings')).rows[0].v,true);
  });
+ await t.test('saved pickup interval and preparation time are enforced by the database',async()=>{
+  await db.exec('update public.store_settings set lead_minutes=0,interval_minutes=15');
+  const allowed=(await db.query<{v:boolean}>('select private.pickup_request_valid($1) v',[pickup.plus({minutes:15}).toUTC().toISO()])).rows[0].v;assert.equal(allowed,true);
+  const rejected=(await db.query<{v:boolean}>('select private.pickup_request_valid($1) v',[pickup.plus({minutes:7}).toUTC().toISO()])).rows[0].v;assert.equal(rejected,false);
+  await db.exec('update public.store_settings set lead_minutes=10080');
+  assert.equal((await db.query<{v:boolean}>('select private.pickup_request_valid($1) v',[pickup.toUTC().toISO()])).rows[0].v,false);
+ });
  await db.close();
 });
 
