@@ -75,6 +75,12 @@ test('Postgres migrations: RLS, admin identity, atomic orders and idempotency',a
   await db.exec('update public.store_settings set lead_minutes=10080');
   assert.equal((await db.query<{v:boolean}>('select private.pickup_request_valid($1) v',[pickup.toUTC().toISO()])).rows[0].v,false);
  });
+ await t.test('closure settings synchronize retained and removed dates without duplicate inserts',async()=>{
+  const save=async(dates:string[])=>db.query('select public.save_settings($1,(select to_jsonb(s) from public.store_settings s),(select jsonb_agg(to_jsonb(h)) from public.weekly_hours h),$2)',[ids.owner,JSON.stringify(dates)]);
+  await save(['2026-12-24','2026-12-25']);await save(['2026-12-25']);await save(['2026-12-25']);
+  assert.deepEqual((await db.query<{date:string}>('select date::text date from public.store_closures')).rows.map(r=>r.date),['2026-12-25']);
+  await save([]);assert.equal((await db.query<{count:number}>('select count(*)::int count from public.store_closures')).rows[0].count,0);
+ });
  await db.close();
 });
 
