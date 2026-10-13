@@ -333,10 +333,10 @@ export const messages: Record<string, readonly string[]> = {"guide":["Vlees & kr
     "3 · Kontrol"
   ],
   "signinText": [
-    "Gebruik je Google-account om af te rekenen en je bestellingen terug te vinden.",
-    "استخدم حساب Google لإتمام الطلب وعرض طلباتك السابقة.",
-    "Use your Google account to check out and view past orders.",
-    "Siparişi tamamlamak ve geçmiş siparişleri görmek için Google hesabınızı kullanın."
+    "De winkelbeheerder kan met Google inloggen. Klanten kunnen zonder account een bestelaanvraag versturen.",
+    "يمكن لصاحب المحل الدخول عبر Google. يمكن للزبائن إرسال طلب دون إنشاء حساب.",
+    "The shop administrator can sign in with Google. Customers can send an order request without an account.",
+    "Mağaza yöneticisi Google ile giriş yapabilir. Müşteriler hesap açmadan sipariş talebi gönderebilir."
   ],
   "date": [
     "Ophaaldatum",
@@ -1108,4 +1108,5 @@ messages.requestEnabled=['Bestelaanvragen inschakelen','تفعيل طلبات ا
 messages.requestUnits=['Besteleenheden','وحدات الطلب','Order units','Sipariş birimleri'];
 messages.priceCents=['Interne prijs (niet zichtbaar op de website)','السعر الداخلي (لا يظهر للعملاء)','Internal price (hidden from customers)','Dahili fiyat (müşterilere görünmez)'];
 messages.showcase=['Assortiment op aanvraag','تشكيلة للتأكيد من المحل','Selection on request','Talep üzerine ürünler'];
+
 

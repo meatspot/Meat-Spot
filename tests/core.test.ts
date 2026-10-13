@@ -52,6 +52,22 @@ test('Postgres migrations: RLS, admin identity, atomic orders and idempotency',a
  await assert.rejects(()=>role('authenticated',ids.owner,()=>db.query("select public.review_order_request($1,'completed')",[row.id])),/INVALID_TRANSITION/);
  await assert.rejects(()=>role('authenticated',ids.a,()=>db.query('select price_minor from public.products')),/permission denied/);
  });
+ await t.test('shop settings accept unused pickup values and roll back rejected activation atomically',async()=>{
+  const before=(await db.query<Record<string,unknown>>('select * from public.store_settings')).rows[0];
+  const hours=(await db.query('select day,opens,closes,closed from public.weekly_hours order by day')).rows;
+  const document={...before,orders_enabled:false,requests_enabled:false,lead_minutes:null,interval_minutes:null,slot_capacity:null,latitude:null,longitude:null,map_place_id:null};
+  const save=(actor:string,d:unknown)=>role('service_role',actor,()=>db.query('select public.save_store_configuration($1,$2,$3,$4)',[actor,JSON.stringify(d),JSON.stringify(hours),'[]']));
+  await assert.rejects(()=>save(ids.a,document),/FORBIDDEN/);
+  await save(ids.owner,document);
+  const saved=(await db.query<{requests_enabled:boolean,lead_minutes:null,phone:string}>('select requests_enabled,lead_minutes,phone from public.store_settings')).rows[0];
+  assert.equal(saved.requests_enabled,false);assert.equal(saved.lead_minutes,null);
+  await assert.rejects(()=>save(ids.owner,{...document,phone:'+31699999999',requests_enabled:true}),/LEGAL_CONTENT_REQUIRED/);
+  const rejected=(await db.query<{requests_enabled:boolean,phone:string}>('select requests_enabled,phone from public.store_settings')).rows[0];
+  assert.equal(rejected.phone,saved.phone);assert.equal(rejected.requests_enabled,false);
+  await db.query("insert into public.content_blocks(key,published,translations) values('privacy',true,$1),('terms',true,$1)",[JSON.stringify(translations)]);
+  await save(ids.owner,{...document,requests_enabled:true});
+  assert.equal((await db.query<{v:boolean}>('select requests_enabled as v from public.store_settings')).rows[0].v,true);
+ });
  await db.close();
 });
 
